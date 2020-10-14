@@ -14,7 +14,9 @@ val accessToken: String = System.getenv("JAICP_API_TOKEN") ?: Properties().run {
 }
 
 private val cailaNLUSettings = CailaNLUSettings(
-    accessToken = accessToken
+    accessToken = accessToken,
+    cailaUrl = "http://test-ha01.lo.test-ai.net/cailapub/api/caila/p"
+
 )
 
 const val CA_URL = "http://test-ha01.lo.test-ai.net/chatadapter"
