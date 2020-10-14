@@ -17,10 +17,12 @@ private val cailaNLUSettings = CailaNLUSettings(
     accessToken = accessToken
 )
 
+const val CA_URL = "http://test-ha01.lo.test-ai.net"
+
 val templateBot = BotEngine(
     model = MainScenario.model,
     conversationLoggers = arrayOf(
-        JaicpConversationLogger(accessToken)
+        JaicpConversationLogger(accessToken, url = CA_URL)
     ),
     activators = arrayOf(
         CailaIntentActivator.Factory(cailaNLUSettings),
