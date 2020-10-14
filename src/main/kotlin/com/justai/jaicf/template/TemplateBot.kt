@@ -17,7 +17,7 @@ private val cailaNLUSettings = CailaNLUSettings(
     accessToken = accessToken
 )
 
-const val CA_URL = "http://test-ha01.lo.test-ai.net"
+const val CA_URL = "http://test-ha01.lo.test-ai.net/chatadapter"
 
 val templateBot = BotEngine(
     model = MainScenario.model,
