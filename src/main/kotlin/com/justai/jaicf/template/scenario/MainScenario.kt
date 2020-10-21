@@ -47,6 +47,7 @@ object MainScenario : Scenario() {
             }
 
             action {
+                reactions.say("bleeeeeeeeee")
                 activator.caila?.topIntent?.answer?.let {
                     reactions.say(it)
                 }
