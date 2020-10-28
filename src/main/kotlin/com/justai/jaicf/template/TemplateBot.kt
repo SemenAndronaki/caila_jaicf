@@ -5,6 +5,7 @@ import com.justai.jaicf.activator.caila.CailaIntentActivator
 import com.justai.jaicf.activator.caila.CailaNLUSettings
 import com.justai.jaicf.activator.regex.RegexActivator
 import com.justai.jaicf.channel.jaicp.logging.JaicpConversationLogger
+import com.justai.jaicf.logging.Slf4jConversationLogger
 import com.justai.jaicf.template.scenario.MainScenario
 import java.util.*
 
@@ -14,17 +15,14 @@ val accessToken: String = System.getenv("JAICP_API_TOKEN") ?: Properties().run {
 }
 
 private val cailaNLUSettings = CailaNLUSettings(
-    accessToken = accessToken,
-    cailaUrl = "http://test-ha01.lo.test-ai.net/cailapub/api/caila/p"
-
+    accessToken = accessToken
 )
-
-const val CA_URL = "http://test-ha01.lo.test-ai.net/chatadapter"
 
 val templateBot = BotEngine(
     model = MainScenario.model,
     conversationLoggers = arrayOf(
-        JaicpConversationLogger(accessToken, url = CA_URL)
+        JaicpConversationLogger(accessToken),
+        Slf4jConversationLogger()
     ),
     activators = arrayOf(
         CailaIntentActivator.Factory(cailaNLUSettings),

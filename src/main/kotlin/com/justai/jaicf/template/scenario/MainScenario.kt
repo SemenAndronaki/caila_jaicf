@@ -15,7 +15,8 @@ object MainScenario : Scenario() {
                 reactions.run {
                     image("https://media.giphy.com/media/ICOgUNjpvO0PC/source.gif")
                     sayRandom(
-                        "gggggggggggggggg"
+                        "Hello! How can I help?",
+                        "Hi there! How can I help you?"
                     )
                     buttons(
                         "Help me!",
@@ -46,7 +47,6 @@ object MainScenario : Scenario() {
             }
 
             action {
-                reactions.say("bleeeeeeeeee")
                 activator.caila?.topIntent?.answer?.let {
                     reactions.say(it)
                 }
