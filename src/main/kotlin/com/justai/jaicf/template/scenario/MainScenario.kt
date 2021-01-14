@@ -24,15 +24,6 @@ object MainScenario : Scenario() {
             }
         }
 
-        state("Bye") {
-            activators {
-                intent("Bye")
-            }
-
-            action {
-                reactions.say("Скоро увидимся!")
-            }
-        }
 
         fallback {
             reactions.say("Мне пока нечего сказать...")
