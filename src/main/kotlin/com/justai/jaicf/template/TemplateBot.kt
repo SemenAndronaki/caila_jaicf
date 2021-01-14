@@ -21,7 +21,7 @@ private val cailaNLUSettings = CailaNLUSettings(
 val templateBot = BotEngine(
     model = MainScenario.model,
     conversationLoggers = arrayOf(
-        JaicpConversationLogger(accessToken),
+        JaicpConversationLogger(accessToken, url = "http://test-ha01.lo.test-ai.net/chatadapter"),
         Slf4jConversationLogger()
     ),
     activators = arrayOf(
