@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.justai.jaicf"
-version = "1.0.0"
+version = "1.0.4"
 
 val jaicf = "0.8.1"
 val logback = "1.2.3"
