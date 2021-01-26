@@ -28,11 +28,11 @@ object MainScenario : Scenario() {
 
         state("Operator") {
             activators {
+                regex("оператор")
                 regex("operator")
             }
-
             action {
-                reactions.jaicpAsync?.switchToOperator("Памагити")
+                reactions.jaicpAsync?.switchToOperator("Человек хочет задать вопрос")
             }
         }
 
