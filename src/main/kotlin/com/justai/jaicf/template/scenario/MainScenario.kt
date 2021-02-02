@@ -1,6 +1,7 @@
 package com.justai.jaicf.template.scenario
 
 import com.justai.jaicf.model.scenario.Scenario
+import com.justai.jaicf.activator.caila.caila
 
 object MainScenario : Scenario() {
 
@@ -31,6 +32,16 @@ object MainScenario : Scenario() {
 
             action {
                 reactions.say("Скоро увидимся!")
+            }
+        }
+        
+        state("Delivery") {
+            activators {
+                intent("Delivery")
+            }
+
+            action {
+                reactions.say(activator.caila?.topIntent?.answer.toString())
             }
         }
 
