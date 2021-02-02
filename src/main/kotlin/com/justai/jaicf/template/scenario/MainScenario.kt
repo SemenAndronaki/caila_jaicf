@@ -1,8 +1,6 @@
 package com.justai.jaicf.template.scenario
 
-import com.justai.jaicf.channel.jaicp.reactions.switchToOperator
 import com.justai.jaicf.model.scenario.Scenario
-import com.justai.jaicf.reactions.jaicp.jaicpAsync
 
 object MainScenario : Scenario() {
 
@@ -26,16 +24,15 @@ object MainScenario : Scenario() {
             }
         }
 
-        state("Operator") {
+        state("Bye") {
             activators {
-                regex("оператор")
-                regex("operator")
+                intent("Bye")
             }
+
             action {
-                reactions.jaicpAsync?.switchToOperator("Человек хочет задать вопрос")
+                reactions.say("Скоро увидимся!")
             }
         }
-
 
         fallback {
             reactions.say("Мне пока нечего сказать...")

@@ -5,9 +5,9 @@ plugins {
 }
 
 group = "com.justai.jaicf"
-version = "1.0.4"
+version = "1.0.0"
 
-val jaicf = "x0.10.3"
+val jaicf = "0.8.1"
 val logback = "1.2.3"
 val ktor = "1.3.1"
 
@@ -17,11 +17,10 @@ application {
 }
 
 repositories {
-//    mavenLocal()
-//    mavenCentral()
-//    jcenter()
-//    maven("https://jitpack.io")
-    maven("https://dl.bintray.com/vmetelyagin/mva")
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+    maven("https://jitpack.io")
 }
 
 dependencies {
